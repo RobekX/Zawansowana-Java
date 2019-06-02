@@ -1,17 +1,24 @@
-package model;
+package model.enities;
 
 import lombok.Data;
 import org.apache.log4j.Logger;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-import java.util.UUID;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
+@Entity
 public class Client {
 
     static Logger log = Logger.getLogger(Client.class);
-    private UUID id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     //Client Data
     private String forename;
     private String surname;
