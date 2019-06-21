@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class Worker {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     private String login;
     private String password;
@@ -21,5 +21,10 @@ public class Worker {
     private String surname;
     private Boolean isAdmin;
 
+    public Worker(){
 
+    }
+    public Worker(Integer id){
+
+    }
 }

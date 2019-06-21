@@ -12,10 +12,17 @@ import javax.persistence.Id;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
     private Double cost; //Daily Cost per Day
-    private Integer floor;
-    private Integer numberofDoubleBeds;
-    private Integer numberofSingleBeds;
+    private Integer roomFloor;
+    private Integer numberOfDoubleBeds;
+    private Integer numberOfSingleBeds;
     private Double size; //Size of room in m^2
+
+    public Room(){
+
+    }
+    public Room(Integer id){
+
+    }
 }
