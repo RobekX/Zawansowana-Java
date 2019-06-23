@@ -2,30 +2,28 @@ package model.enities;
 
 import org.junit.Test;
 
-public class RoomTest {
+import static org.junit.Assert.*;
+
+public class IssueTest {
 
     @Test
     public void getId() {
     }
 
     @Test
-    public void getCost() {
+    public void getCreatedDate() {
     }
 
     @Test
-    public void getRoomFloor() {
+    public void getIssueMessage() {
     }
 
     @Test
-    public void getNumberOfDoubleBeds() {
+    public void getClientId() {
     }
 
     @Test
-    public void getNumberOfSingleBeds() {
-    }
-
-    @Test
-    public void getSize() {
+    public void getWorkerId() {
     }
 
     @Test
@@ -33,23 +31,19 @@ public class RoomTest {
     }
 
     @Test
-    public void setCost() {
+    public void setCreatedDate() {
     }
 
     @Test
-    public void setRoomFloor() {
+    public void setIssueMessage() {
     }
 
     @Test
-    public void setNumberOfDoubleBeds() {
+    public void setClientId() {
     }
 
     @Test
-    public void setNumberOfSingleBeds() {
-    }
-
-    @Test
-    public void setSize() {
+    public void setWorkerId() {
     }
 
     @Test
