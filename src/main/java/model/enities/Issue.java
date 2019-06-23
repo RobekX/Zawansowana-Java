@@ -10,9 +10,11 @@ import java.time.LocalDate;
 public class Issue {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     private LocalDate createdDate;
+
+    private String issueMessage;
 
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "client_id", referencedColumnName = "id")
@@ -20,5 +22,9 @@ public class Issue {
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "worker_id", referencedColumnName ="id")
     private Worker workerId;
+
+    public Issue(){
+
+    }
 
 }

@@ -1,14 +1,13 @@
 package model.enities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.log4j.Logger;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -18,20 +17,27 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
     //Client Data
     private String forename;
     private String surname;
     private String pesel;
     //Address
     private String street;
-    private String postCode;
+    private String postalCode;
     private String city;
     //contact Data
     private String phoneNumber;
     private String emailAddress;
 
     //methods
+
+    public Client(){
+
+    }
+    public Client(Integer id){
+
+    }
     public Client(String forename, String surname, String pesel, String street, String postCode, String city,
                   String phoneNumber, String emailAddress) {
         this.forename = forename;
@@ -44,7 +50,7 @@ public class Client {
         //    log.error("Wrong PESEL");
         //}
         this.street = street;
-        this.postCode = postCode;
+        this.postalCode = postCode;
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.emailAddress = emailAddress;

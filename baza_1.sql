@@ -16,6 +16,7 @@ create table if not exists client(
 	surname varchar(50) not null,
 	pesel varchar(11),
 	postal_code varchar(6),
+	street varchar(50),
 	city varchar(50),
 	phone_number varchar(15),
 	email_address varchar(50),
@@ -47,6 +48,7 @@ create table if not exists reservation(
 create table if not exists issue(
 	id int auto_increment,
 	created_date date not null,
+	issue_message varchar(500),
 	client_id int not null,
 	worker_id int not null,
 	primary key (id),

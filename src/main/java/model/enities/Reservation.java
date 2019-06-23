@@ -11,7 +11,7 @@ import java.time.temporal.ChronoUnit;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
     private LocalDate startDate;
     private LocalDate endDate;
     @OneToOne(cascade = CascadeType.DETACH)
@@ -26,7 +26,15 @@ public class Reservation {
     private Double totalCost;
     private Long days;
 
-    public Reservation(Long id, LocalDate startDate, LocalDate endDate, Client client, Room room) {
+    public Reservation(){
+
+    }
+
+    public Reservation(Integer id){
+
+    }
+
+    public Reservation(Integer id, LocalDate startDate, LocalDate endDate, Client client, Room room) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
