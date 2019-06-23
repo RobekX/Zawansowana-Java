@@ -56,9 +56,9 @@ public class RoomController {
         RoomValues roomValues = new RoomValues();
         Currency currency = new Currency();
         roomValues.setCostPLN(room.getCost());
-        roomValues.setCostEUR(room.getCost()*currency.getRateValue(CurrencyCode.EUR));
-        roomValues.setCostGBP(room.getCost()*currency.getRateValue(CurrencyCode.GBP));
-        roomValues.setCostUSD(room.getCost()*currency.getRateValue(CurrencyCode.USD));
+        roomValues.setCostEUR(room.getCost()/currency.getRateValue(CurrencyCode.EUR));
+        roomValues.setCostGBP(room.getCost()/currency.getRateValue(CurrencyCode.GBP));
+        roomValues.setCostUSD(room.getCost()/currency.getRateValue(CurrencyCode.USD));
 
         return roomValues;
     }
