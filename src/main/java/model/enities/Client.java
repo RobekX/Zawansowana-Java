@@ -38,8 +38,9 @@ public class Client {
     public Client(Integer id){
 
     }
-    public Client(String forename, String surname, String pesel, String street, String postCode, String city,
+    public Client(Integer id, String forename, String surname, String pesel, String street, String postCode, String city,
                   String phoneNumber, String emailAddress) {
+        this.id = id;
         this.forename = forename;
         this.surname = surname;
         this.pesel = pesel;

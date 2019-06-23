@@ -1,5 +1,5 @@
 package model.utils;
 
 public enum CurrencyCode {
-    USD,EUR,GBP;
+    USD,EUR,GBP
 }
