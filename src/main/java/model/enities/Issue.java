@@ -23,7 +23,7 @@ public class Issue {
     @JoinColumn(name = "worker_id", referencedColumnName ="id")
     private Worker workerId;
 
-    public Issue(){
+    public Issue(String s, String s1, String s2){
 
     }
 

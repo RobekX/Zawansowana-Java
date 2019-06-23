@@ -5,9 +5,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class IssueTest {
-
+private Issue issu;
     @Test
     public void getId() {
+        issu = new Issue("1" , "1" ,"1");
+
     }
 
     @Test

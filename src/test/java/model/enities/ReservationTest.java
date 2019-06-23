@@ -6,6 +6,26 @@ import static org.junit.Assert.*;
 
 public class ReservationTest {
 
+    private Worker emplo = new Worker(
+            1,
+            "login",
+            "haslo",
+            "nazwisko",
+            "imie",
+            true);
+    private Room room = new Room(
+            1,
+            150.0,
+            1,
+            3,
+            4,
+            30.0);
+    private Reservation resev = new Reservation(
+            1,
+            2019-10-22,
+            2019-10-25,
+            3,
+            room);
     @Test
     public void getId() {
     }

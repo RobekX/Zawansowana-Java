@@ -1,5 +1,6 @@
 package model.controllers;
 
+import model.enities.Issue;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ public class IssueControllerTest {
 
     @Before
     public void setUp() throws Exception {
+
     }
 
     @After
@@ -18,6 +20,7 @@ public class IssueControllerTest {
 
     @Test
     public void addNewIssue() {
+
     }
 
     @Test
