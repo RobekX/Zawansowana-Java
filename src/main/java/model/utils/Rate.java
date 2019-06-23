@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -15,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "effectiveDate",
         "mid"
 })
+@Data
 public class Rate {
 
     @JsonProperty("no")
@@ -25,7 +27,7 @@ public class Rate {
     private Double mid;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
+/*
     @JsonProperty("no")
     public String getNo() {
         return no;
@@ -65,5 +67,7 @@ public class Rate {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
+
+ */
 
 }

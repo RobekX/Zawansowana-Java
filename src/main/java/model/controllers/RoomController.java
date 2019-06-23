@@ -1,6 +1,9 @@
 package model.controllers;
+import model.dto.RoomValues;
 import model.exceptions.ClientNotFoundException;
 import model.exceptions.RoomNotFoundException;
+import model.utils.Currency;
+import model.utils.CurrencyCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -44,5 +47,19 @@ public class RoomController {
             newRoom.setId(id);
             return roomRepository.save(newRoom);
         });
+    }
+
+    @GetMapping(path="/cost/{id}")
+    public @ResponseBody
+    RoomValues getSingleRoomCosts(@PathVariable Integer id){
+        Room room = roomRepository.findById(id).orElseThrow(() -> new RoomNotFoundException(id));
+        RoomValues roomValues = new RoomValues();
+        Currency currency = new Currency();
+        roomValues.setCostPLN(room.getCost());
+        roomValues.setCostEUR(room.getCost()*currency.getRateValue(CurrencyCode.EUR));
+        roomValues.setCostGBP(room.getCost()*currency.getRateValue(CurrencyCode.GBP));
+        roomValues.setCostUSD(room.getCost()*currency.getRateValue(CurrencyCode.USD));
+
+        return roomValues;
     }
 }
