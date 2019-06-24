@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 @Data
@@ -35,13 +36,14 @@ public class Reservation {
 
     }
 
-    public Reservation(Integer id, LocalDate startDate, LocalDate endDate, Client client, Room room) {
+    public Reservation(Integer id, String startDate, String endDate, Client client, Room room) {
         this.id = id;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.startDate = LocalDate.parse(startDate);
+        this.endDate = LocalDate.parse(endDate);
         this.client = client;
         this.room = room;
         this.totalCost = setTotalCost();
+        this.days= setDaysOfRental();
     }
 
     private Double setTotalCost() {
@@ -53,5 +55,17 @@ public class Reservation {
     private Long setDaysOfRental() {
         days = ChronoUnit.DAYS.between(startDate, endDate);
         return days;
+    }
+    public LocalDate setStartDate(String data){
+        this.startDate = LocalDate.parse(data);
+        setDaysOfRental();
+        setTotalCost();
+        return startDate;
+    }
+    public LocalDate setEndDate(String data){
+        this.endDate = LocalDate.parse(data);
+        setTotalCost();
+        setDaysOfRental();
+        return endDate;
     }
 }

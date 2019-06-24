@@ -48,8 +48,8 @@ public class ReservationController {
     @PutMapping(path="/edit")
     public @ResponseBody Reservation updateReservation(@RequestBody Reservation newReservation, @RequestParam Integer id){
         return reservationRepository.findById(id).map(reservation -> {
-            reservation.setStartDate(newReservation.getStartDate());
-            reservation.setEndDate(newReservation.getEndDate());
+            reservation.setStartDate(String.valueOf(newReservation.getStartDate()));
+            reservation.setEndDate(String.valueOf(newReservation.getEndDate()));
             return reservationRepository.save(reservation);
         }).orElseGet(() -> {
             newReservation.setId(id);
