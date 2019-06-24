@@ -72,7 +72,7 @@ public class ReservationTest {
 
     @Test
     public void getDays() {
-        assertEquals(Integer.valueOf(3),resev.getDays());
+        assertEquals(Long.valueOf(3),resev.getDays());
     }
 
     @Test
